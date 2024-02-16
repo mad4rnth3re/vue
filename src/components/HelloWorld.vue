@@ -2,6 +2,7 @@
   <div class="hello">
     <h2>Welcome to home page</h2>
     <button v-on:click="logout" class="btn btn-info mb-4 mt-2">log out</button>
+    <router-link :to="{name : Admin}">admin</router-link>
   </div>
 </template>
 

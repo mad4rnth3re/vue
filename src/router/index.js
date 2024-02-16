@@ -14,6 +14,11 @@ export default new Router({
       component: HelloWorld
     },
     {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin
+    },
+    {
       path: '/regis',
       name: 'Register',
       component: Register
