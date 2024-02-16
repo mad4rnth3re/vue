@@ -9,9 +9,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {
+        requiresAuth:true
+      }
     },
     {
       path: '/regis',
@@ -19,7 +22,7 @@ export default new Router({
       component: Register
     },
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: Login
     }
