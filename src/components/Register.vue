@@ -4,13 +4,13 @@
         <div class="card-body" style="width: auto; padding: 1em;">
             <form @submit.prevent="saveData"  class="text-start">
                 <label class="py-1">Name</label>
-            <input type="text" v-model="student.name" name="name" id="name" class="form-control"/>
+            <input type="text" v-model="user.name" name="name" id="name" class="form-control"/>
             
             <label class="py-2">Email</label>
-            <input type="email" v-model="student.email" name="email" id="email" class="form-control"/>
+            <input type="email" v-model="user.email" name="email" id="email" class="form-control"/>
             
             <label class="py-2">Password</label>
-            <input type="password" v-model="student.password" name="password" id="password" class="form-control"/>
+            <input type="password" v-model="user.password" name="password" id="password" class="form-control"/>
   
             
             <p class="pt-4">Already have an account?<router-link :to="{name: 'Login'}"> Login Now</router-link></p>
@@ -31,7 +31,7 @@
         data(){
             return {
                 result: {},
-                student:{
+                user:{
                     name:  '',
                     email:  '',
                     password:  ''
@@ -46,7 +46,7 @@
         },
         methods: {
             saveData(){
-                axios.post("http://127.0.0.1:8000/api/regis", this.student)
+                axios.post("http://127.0.0.1:8000/api/regis", this.user)
                 .then(
                     ({data})=>{
                         console.log(data);

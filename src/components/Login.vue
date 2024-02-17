@@ -7,9 +7,9 @@
   
                 <div class="card-body" align="left" style="padding: 2em;">
                     <label class="py-2">Email</label>
-                    <input type="email" v-model="student.email" class="form-control" placeholder="input email" >
+                    <input type="email" v-model="user.email" class="form-control" placeholder="input email" >
                     <label class="py-2">Password</label>
-                    <input type="password" v-model="student.password" class="form-control" placeholder="input password" >
+                    <input type="password" v-model="user.password" class="form-control" placeholder="input password" >
                 </div>
   
                 <p>Don't have an account yet? <router-link :to="{name: 'Register'}">Register Now</router-link></p>
@@ -30,7 +30,7 @@
         data(){
             return {
                 result: {},
-                student:{
+                user:{
                     email: '',
                     password: ''
                 }
@@ -43,7 +43,7 @@
         },
         methods: {
             loginData(){
-                axios.post("http://127.0.0.1:8000/api/login", this.student)
+                axios.post("http://127.0.0.1:8000/api/login", this.user)
                 .then(
                     ({data})=>{
                         console.log(data);
