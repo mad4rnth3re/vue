@@ -2,7 +2,7 @@
   <div class="container">
     <Layouts />
     <div class="position-absolute top-50 start-50 translate-middle">
-      <h2>Welcome to home page</h2>
+      <h2>Welcome to admin page</h2>
     </div>
   </div>
 </template>
