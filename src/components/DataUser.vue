@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Layouts />
-        <table class="table table-hover position-absolute top-50 start-50 translate-middle" border="3">
+        <table class="table table-hover table-striped-columns position-absolute top-50 start-50 translate-middle" border="3">
             <thead class="table-secondary">
                 <tr>
                     <th scope="col">id</th>
