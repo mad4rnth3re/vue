@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import AdminPage from '@/components/AdminPage'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
-import Admin from '@/components/Admin'
+import DataUser from '@/components/DataUser'
 import AddUser from '@/components/AddUser'
 import EditUser from '@/components/EditUser'
 import UserDash from '@/components/UserDash'
@@ -13,9 +13,9 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      path: '/admin',
+      name: 'AdminPage',
+      component: AdminPage,
       meta: { requiresAuth: true }
     },
     {
@@ -25,9 +25,9 @@ const router = new Router({
       meta: { requiresAuth: true }
     },
     {
-      path: '/admin',
-      name: 'Admin',
-      component: Admin,
+      path: '/data_user',
+      name: 'DataUser',
+      component: DataUser,
       meta: { requiresAuth: true }
     },
     {

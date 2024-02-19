@@ -55,7 +55,7 @@
                 localStorage.setItem('jwt', data.token);
                 if(role === 1){
                     // Redirect ke halaman HelloWorld setelah login berhasil
-                    this.$router.push({ name: 'HelloWorld' });
+                    this.$router.push({ name: 'AdminPage' });
                     alert("Login Success as Admin");
                 }else if(role === 2){
                     // Redirect ke halaman HelloWorld setelah login berhasil

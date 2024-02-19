@@ -10,7 +10,7 @@
 <script>
 import Layouts from '@/components/Layouts.vue'
 export default {
-  name: 'HelloWorld',
+  name: 'AdminPage',
   components:{
     Layouts
   },

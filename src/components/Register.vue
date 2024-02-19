@@ -52,7 +52,7 @@
                         console.log(data);
                         try{
                             alert("Data successfully uploaded")
-                            this.$router.push({ name: 'HelloWorld'})
+                            this.$router.push({ name: 'UserDash'})
                         }catch(err){
                             alert('failed upload data')
                         }
