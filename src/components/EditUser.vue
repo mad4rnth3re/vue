@@ -16,62 +16,61 @@
   </template>
   
   <script>
-  import axios from 'axios';
-  
-  export default {
-    name: 'EditUser',
-    data() {
-      return {
-        user: {
-          name: '',
-          email: '',
-          errors: []
-        }
-      };
+import axios from 'axios';
+
+export default {
+  name: 'EditUser',
+  data() {
+    return {
+      user: {
+        name: '',
+        email: '',
+        errors: []
+      }
+    };
+  },
+  created() {
+    this.getDataById();
+  },
+  methods: {
+    async getDataById() {
+      await axios.get(`http://127.0.0.1:8000/api/get/${this.$route.params.id}`)
+      .then(response => {
+          console.log(response)
+          this.user = response.data
+      })
     },
-    created() {
-      this.getDataById();
-    },
-    methods: {
-      async getDataById() {
-        await axios.get(`http://127.0.0.1:8000/api/get/${this.$route.params.id}`)
-        .then(response => {
-            console.log(response)
-            this.user = response.data
-        })
-        }
-      },
-      async updateData() {
-        this.user.errors = [];
-  
-        if (!this.user.name.trim()) {
-          this.user.errors.push('Name is required');
-        }
-        if (!this.user.email.trim()) {
-          this.user.errors.push('Email is required');
-        }
-  
-        if (this.user.errors.length === 0) {
-          try {
-            const formData = new FormData();
-            formData.append('name', this.user.name);
-            formData.append('email', this.user.email);
-  
-            const url = `http://127.0.0.1:8000/api/update/${this.$route.params.id}`;
-            const response = await axios.post(url, formData);
-            this.$router.push({name: 'DataUser'})
-  
-            if (response.status === 200) {
-              alert(response.data.message);
-            } else {
-              alert('Error updating user');
-            }
-          } catch (error) {
-            console.error('Error updating user:', error);
+    async updateData() {
+      this.user.errors = [];
+
+      if (!this.user.name.trim()) {
+        this.user.errors.push('Name is required');
+      }
+      if (!this.user.email.trim()) {
+        this.user.errors.push('Email is required');
+      }
+
+      if (this.user.errors.length === 0) {
+        try {
+          const formData = new FormData();
+          formData.append('name', this.user.name);
+          formData.append('email', this.user.email);
+
+          const url = `http://127.0.0.1:8000/api/update/${this.$route.params.id}`;
+          const response = await axios.post(url, formData);
+          this.$router.push({name: 'DataUser'})
+
+          if (response.status === 200) {
+            alert(response.data.message);
+          } else {
             alert('Error updating user');
           }
+        } catch (error) {
+          console.error('Error updating user:', error);
+          alert('Error updating user');
         }
       }
     }
-  </script>
-  
+  }
+}
+</script>
