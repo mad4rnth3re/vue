@@ -19,7 +19,7 @@ const router = new Router({
       meta: { requiresAuth: true }
     },
     {
-      path: '/user',
+      path: '/',
       name: 'UserDash',
       component: UserDash,
       meta: { requiresAuth: true }
