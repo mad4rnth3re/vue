@@ -3,7 +3,7 @@
         <div class="col-sm-4" style="width: auto;">
             <div class="card-header fw-bolder">Login Form</div>
   
-            <form @submit.prevent="loginData">
+            <form @submit.prevent="loginData" >
   
                 <div class="card-body" align="left" style="padding: 2em;">
                     <label class="py-2">Email</label>

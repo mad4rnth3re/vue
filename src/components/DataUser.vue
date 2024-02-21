@@ -23,7 +23,6 @@
             </tbody>
         </table>
 
-        <!-- <input type="button" value="Add User" class="mt-4 p-2"> -->
     </div>
 </template>
 

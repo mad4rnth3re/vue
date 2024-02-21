@@ -54,7 +54,7 @@ export default {
           console.log(data);
           try {
             alert("Data successfully uploaded");
-            this.$router.push({ name: "AdminPage" });
+            this.$router.push({ name: "DataUser" });
           } catch (error) {
             alert(error);
           }
